@@ -448,7 +448,7 @@
         </div>
       </div>
 
-  <div class='admin-screen' id='scr-live'>
+  </div> </div> <div class='admin-screen' id='scr-live'>
     <div class='screen-header'><div class='btn-back' onclick='closeScreen()'><i class='fa-solid fa-arrow-left'></i></div> Live Monitor &amp; Omset</div>
     <div class='screen-content'>
       <div class='live-dashboard'>
@@ -558,16 +558,16 @@
     <div class='screen-content'>
       <div class='card-panel' style='border-top: 2px solid #64748b;'>
         <h4 style='margin-top:0; color:#e2e8f0;'><i class='fa-solid fa-user-plus'></i> Buat Akun Asisten Baru</h4>
-        <div style='display:flex; gap:10px;'><div class='form-group'><label>Username</label><input id='addAdminUser' type='text'></div><div class='form-group'><label>Password</label><input id='addAdminPass' type='text'></div><div class='form-group'><label>Peran (Role)</label><select id='addAdminRole' onchange='toggleAksesMenu()'><option value='CPANEL'>Asisten (C-Panel)</option><option value='AGEN'>Agen Distributor</option></select></div></div>
+        <div style='display:flex; gap:10px;'><div class='form-group'><label>Username</label><input id='addAdminUser' type='text'></div><div class='form-group'><label>Password</label><input id='addAdminPass' type='text'></div><div class='form-group'><label>Peran (Role)</label><select id='addAdminRole' onchange='toggleAksesMenu()'>
+       <option value='MASTER'>Super Admin (MASTER)</option>
+       <option value='CPANEL'>Asisten (C-Panel)</option>
+       <option value='AGEN'>Agen Distributor</option>
+   </select></div></div>
         <div id='wrapAksesCpanel'><label>Berikan Izin Akses Menu (Hanya untuk C-Panel):</label><div class='akses-grid' style='display: grid; grid-template-columns: 1fr 1fr; gap: 10px; background: #0b0f19; padding: 15px; border-radius: 8px; border: 1px solid #334155;'><label><input class='chk-akses' type='checkbox' value='menu-live'> Live Monitor</label><label><input class='chk-akses' type='checkbox' value='menu-akuntansi'> Buku Kas Induk</label><label><input class='chk-akses' type='checkbox' value='menu-paket'> Harga & Paket</label><label><input class='chk-akses' type='checkbox' value='menu-sistem'> Daftar &amp; Game</label><label><input class='chk-akses' type='checkbox' value='menu-stats'> Global Stats</label><label><input class='chk-akses' type='checkbox' value='menu-pabrik'> Pabrik Token</label><label><input class='chk-akses' type='checkbox' value='menu-team'> Data Tim</label><label><input class='chk-akses' type='checkbox' value='menu-miner'> Data Miner</label><label><input class='chk-akses' type='checkbox' value='menu-approval'> Antrean WD</label><label><input class='chk-akses' type='checkbox' value='menu-reward'> Injeksi Reward</label><label><input class='chk-akses' type='checkbox' value='menu-notif'> Pengumuman</label></div></div>
         <button class='btn-main' id='btnBuatAdmin' onclick='eksekusiBuatAdmin()' style='margin-top:15px; background:#64748b;'><i class='fa-solid fa-save'></i> Simpan Akun Asisten</button>
       </div>
       <div class='card-panel'><h4>Daftar Admin Terdaftar</h4><div class='table-wrap'><table><thead><tr><th class='col-no'>No</th><th>Username &amp; Pass</th><th>Role Akses</th><th>Aksi</th></tr></thead><tbody id='tblAdminList'><tr><td colspan='4' style='text-align:center;'>Memuat...</td></tr></tbody></table></div></div>
     </div>
-  </div>
-
-  <div class='modal-overlay' id='modalEditData' style='z-index:10000;'>
-    <div class='modal-card' style='max-width: 550px;'><div style='display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;'><h3 style='color:#e2e8f0; margin:0;'><i class='fa-solid fa-user-edit'></i> Edit Data Akun Super Admin</h3><i class='fa-solid fa-xmark' onclick='document.getElementById("modalEditData").style.display="none"' style='cursor:pointer; color:#ef4444; font-size:1.2rem;'></i></div><input id='editDocId' type='hidden'><div style='display:flex; gap:10px;'><div class='form-group' style='flex:1;'><label>Username</label><input id='editInpUser' type='text'></div><div class='form-group' style='flex:1;'><label>Email</label><input id='editInpEmail' type='email'></div></div><div style='display:flex; gap:10px;'><div class='form-group' style='flex:1;'><label>No WhatsApp</label><input id='editInpWa' type='number'></div><div class='form-group' style='flex:1;'><label>Sponsor (Upline)</label><input id='editInpUpline' type='text'></div></div><div class='form-group'><label>Password</label><input id='editInpPass' type='text'></div><hr style='border:1px dashed #475569; margin:15px 0;'/><h4 style='margin-top:0; color:#fbbf24;'><i class='fa-solid fa-wallet'></i> Edit Saldo &amp; Mesin (Dewa)</h4><div style='display:flex; gap:10px;'><div class='form-group' style='flex:1;'><label style='color:#fbbf24;'>Saldo VRSC</label><input id='editInpSaldoVrsc' step='any' style='border-color:#fbbf24;' type='number'></div><div class='form-group' style='flex:1;'><label style='color:#4ade80;'>Saldo IDR Dompet</label><input id='editInpSaldoRp' style='border-color:#4ade80;' type='number'></div></div><div style='display:flex; gap:10px;'><div class='form-group' style='flex:1;'><label style='color:#38bdf8;'>Speed Hash (V/s)</label><input id='editInpSpeed' step='any' style='border-color:#38bdf8;' type='number'></div><div class='form-group' style='flex:1;'><label style='color:#f87171;'>Waktu Exp (Format MS)</label><input id='editInpExp' style='border-color:#f87171;' type='number'></div></div><button class='btn-main' id='btnSimpanEditData' onclick='simpanEditData()' style='background:#10b981; margin-top:10px;'><i class='fa-solid fa-save'></i> SIMPAN PERUBAHAN</button></div>
   </div>
 
   <div class='modal-overlay' id='modalJaringan' style='z-index:9999;'>
@@ -642,14 +642,7 @@
                 localStorage.setItem("cisAdminLog_v2", JSON.stringify({role: dataAdmin.role, aksesArr: dataAdmin.akses_menu || [], nama: dataAdmin.username})); 
                 window.prosesSuksesLogin(dataAdmin.role, dataAdmin.akses_menu || [], dataAdmin.username); 
             } else { 
-                const checkEmpty = await getDocs(collection(db, "Akun_Admin"));
-                if(checkEmpty.empty && u === "admin_utama" && p === "setup2026") {
-                    alert("SETUP PERTAMA BERHASIL! Segera ganti/tambahkan admin resmi di C-Panel.");
-                    localStorage.setItem("cisAdminLog_v2", JSON.stringify({role: "MASTER", aksesArr: ["all"], nama: "Admin Setup"})); 
-                    window.prosesSuksesLogin("MASTER", ["all"], "Admin Setup"); 
-                } else {
-                    alert("Akses Ditolak: Kredensial tidak valid di Database!"); 
-                }
+                alert("Akses Ditolak: Kredensial tidak valid di Database!"); 
             }
         } catch(e) { alert("Error Firebase / Kunci API."); }
         btn.innerText = "AUTHORIZE ACCESS"; btn.disabled = false;
